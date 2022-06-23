@@ -46,6 +46,7 @@ class Login extends React.Component {
           name="email"
           onChange={ this.valueInput }
           value={ email }
+          autoComplete="off"
         />
         <input
           type="password"
