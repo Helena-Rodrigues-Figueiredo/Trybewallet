@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { sendEmail } from '../actions';
+import './Login.css';
 
 class Login extends React.Component {
   state = {
@@ -38,7 +39,7 @@ class Login extends React.Component {
   render() {
     const { isButtonDisabled, email, password } = this.state;
     return (
-      <>
+      <div className="login">
         <input
           type="email"
           data-testid="email-input"
@@ -47,6 +48,7 @@ class Login extends React.Component {
           onChange={ this.valueInput }
           value={ email }
           autoComplete="off"
+          className="input-login"
         />
         <input
           type="password"
@@ -55,15 +57,17 @@ class Login extends React.Component {
           name="password"
           onChange={ this.valueInput }
           value={ password }
+          className="input-login"
         />
         <button
           type="button"
           disabled={ isButtonDisabled }
           onClick={ this.handleClick }
+          className="button-login"
         >
           Entrar
         </button>
-      </>
+      </div>
     );
   }
 }

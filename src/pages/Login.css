@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(2, 117, 69);
+}
+
+.login {
+    background-color: white;
+    margin: 12rem auto 0 auto;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 0;
+}
+
+.input-login {
+    width: 50%;
+    align-self: center;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-bottom: 1px rgb(168, 168, 168) solid;
+}
+
+.button-login {
+    width: 50%;
+    align-self: center;
+    background-color: black;
+    color: white;
+}
