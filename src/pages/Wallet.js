@@ -49,14 +49,14 @@ render() {
         <p data-testid="email-field">
           { email }
         </p>
-        <p data-testid="total-field">
+        <span data-testid="total-field">
           {expenses.reduce((acc, expense) => (
             acc + expense.value * expense
               .exchangeRates[expense.currency].ask), 0).toFixed(2)}
-        </p>
-        <p data-testid="header-currency-field">
+        </span>
+        <span data-testid="header-currency-field">
           BRL
-        </p>
+        </span>
       </header>
       <form>
         <label htmlFor="value">
@@ -164,7 +164,7 @@ render() {
 
                 </td>
                 <td>Real</td>
-                <td>{ element.description }</td>
+                <td>Editar/Excluir</td>
               </tr>
             ))
             )}
