@@ -140,10 +140,35 @@ render() {
               <th key={ element }>{ element }</th>
             ))}
           </tr>
-          <tbody>
-            {expenses.length === 0}
-          </tbody>
         </thead>
+        <tbody>
+          {expenses.length === 0
+            ? null
+            : (expenses.map((element, index) => (
+              <tr key={ index }>
+                <td>{ element.description }</td>
+                <td>{ element.tag }</td>
+                <td>{ element.method }</td>
+                <td>{ Number(element.value).toFixed(2) }</td>
+                <td>{ element.exchangeRates[element.currency].name }</td>
+                <td>
+                  { Number(element
+                    .exchangeRates[element.currency].ask).toFixed(2) }
+
+                </td>
+                <td>
+                  {
+                    (element.value * element
+                      .exchangeRates[element.currency].ask).toFixed(2)
+                  }
+
+                </td>
+                <td>Real</td>
+                <td>{ element.description }</td>
+              </tr>
+            ))
+            )}
+        </tbody>
       </table>
     </>
   );
