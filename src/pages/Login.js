@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { sendEmail } from '../actions';
+import image from '../images/wallet.png';
 import './Login.css';
 
 class Login extends React.Component {
@@ -40,10 +41,11 @@ class Login extends React.Component {
     const { isButtonDisabled, email, password } = this.state;
     return (
       <div className="login">
+        <img src={ image } alt="wallet" className="wallet-img" />
         <input
           type="email"
           data-testid="email-input"
-          placeholder="email"
+          placeholder="Email"
           name="email"
           onChange={ this.valueInput }
           value={ email }
@@ -53,7 +55,7 @@ class Login extends React.Component {
         <input
           type="password"
           data-testid="password-input"
-          placeholder="senha"
+          placeholder="Senha"
           name="password"
           onChange={ this.valueInput }
           value={ password }

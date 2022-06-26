@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(2, 117, 69);
+    font-family: 'raleway';
 }
 
 .login {
@@ -8,20 +8,55 @@ body {
     width: 30rem;
     display: flex;
     flex-direction: column;
-    padding: 10rem 0;
+    padding: 6rem 0 6rem 0;
+    border-radius: 10px;
+    box-shadow: 0 0 1.5em rgb(2, 117, 69);
 }
 
 .input-login {
-    width: 50%;
+    width: 60%;
     align-self: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     border: none;
-    border-bottom: 1px rgb(168, 168, 168) solid;
+    border-bottom: 1px rgb(200, 200, 200) solid;
+    outline: 0;
+    font-size: 1rem;
 }
+
+.input-login:focus {
+    border-bottom: 1px solid rgb(2, 117, 69);
+}
+
 
 .button-login {
     width: 50%;
     align-self: center;
-    background-color: black;
+    background-color: rgb(2, 117, 69);
     color: white;
+    margin-top: 2rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 900;
+    border: none;
+}
+
+.button-login:hover {
+    background-color: rgb(37, 145, 100);
+    cursor: pointer;
+}
+
+.button-login:disabled {
+    background-color: rgb(129, 129, 129);
+}
+
+.button-login:disabled:hover {
+    background-color: rgb(129, 129, 129);
+    cursor: auto;
+}
+
+.wallet-img {
+    width: 20%;
+    margin-bottom: 3rem;
+    align-self: center;
 }

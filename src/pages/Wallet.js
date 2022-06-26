@@ -1,6 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import './Wallet.css';
+import { FaUserCircle } from 'react-icons/fa';
+import { GiTwoCoins } from 'react-icons/gi';
+import { AiTwotoneDelete } from 'react-icons/ai';
+import { FiEdit } from 'react-icons/fi';
+import image from '../images/wallet2.png';
 import { fetchApi, fetchApiExpenses } from '../actions';
 
 class Wallet extends React.Component {
@@ -45,22 +51,31 @@ render() {
 
   return (
     <>
-      <header>
-        <p data-testid="email-field">
-          { email }
-        </p>
-        <span data-testid="total-field">
-          {expenses.reduce((acc, expense) => (
-            acc + expense.value * expense
-              .exchangeRates[expense.currency].ask), 0).toFixed(2)}
-        </span>
-        <span data-testid="header-currency-field">
-          BRL
-        </span>
+      <header className="header">
+        <div className="wallet-trybewallet">
+          <img src={ image } alt="wallet" className="wallet-img-2" />
+          <span>TRYBE WALLET</span>
+        </div>
+        <div className="email-total">
+          <span><FaUserCircle size={ 20 } className="user-icon" /></span>
+          <p data-testid="email-field">
+            { email }
+          </p>
+          <span><GiTwoCoins size={ 20 } className="coins-icon" /></span>
+          <span data-testid="total-field">
+            <span className="cifrao">R$:</span>
+            {expenses.reduce((acc, expense) => (
+              acc + expense.value * expense
+                .exchangeRates[expense.currency].ask), 0).toFixed(2)}
+          </span>
+          <span data-testid="header-currency-field">
+            BRL
+          </span>
+        </div>
       </header>
-      <form>
+      <form className="form">
         <label htmlFor="value">
-          Valor
+          Valor:
           <input
             type="number"
             data-testid="value-input"
@@ -70,15 +85,17 @@ render() {
             value={ value }
             name="value"
             placeholder="R$0,00"
+            className="input-form"
           />
         </label>
         <label htmlFor="currencie">
-          Moeda
+          Moeda:
           <select
             id="currencie"
             onChange={ this.handleChange }
             value={ currency }
             name="currency"
+            className="input-form"
           >
             {currencies.map((element) => (
               <option key={ element } value={ element }>{ element }</option>
@@ -86,13 +103,14 @@ render() {
           </select>
         </label>
         <label htmlFor="payment">
-          Forma de Pagamento
+          Forma de Pagamento:
           <select
             id="payment"
             data-testid="method-input"
             onChange={ this.handleChange }
             value={ method }
             name="method"
+            className="input-form"
           >
             {payment.map((element) => (
               <option key={ element } value={ element }>{ element }</option>
@@ -100,13 +118,14 @@ render() {
           </select>
         </label>
         <label htmlFor="tag">
-          Tag
+          Tag:
           <select
             id="tag"
             data-testid="tag-input"
             onChange={ this.handleChange }
             value={ tag }
             name="tag"
+            className="input-form"
           >
             {tagChoice.map((element) => (
               <option key={ element } value={ element }>{ element }</option>
@@ -114,7 +133,7 @@ render() {
           </select>
         </label>
         <label htmlFor="description">
-          Descrição
+          Descrição:
           <input
             data-testid="description-input"
             id="description"
@@ -123,48 +142,58 @@ render() {
             value={ description }
             name="description"
             placeholder="Ex.: Pizza"
+            className="input-form"
           />
         </label>
         <button
           type="button"
           onClick={ this.handleClick }
+          className="button-form"
         >
           Adicionar despesa
 
         </button>
       </form>
-      <table>
-        <thead>
-          <tr>
+      <table className="table">
+        <thead className="table-head">
+          <tr className="table-tr">
             {thead.map((element) => (
-              <th key={ element }>{ element }</th>
+              <th className="table-th" key={ element }>{ element }</th>
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="table-body">
           {expenses.length === 0
             ? null
             : (expenses.map((element, index) => (
-              <tr key={ index }>
-                <td>{ element.description }</td>
-                <td>{ element.tag }</td>
-                <td>{ element.method }</td>
-                <td>{ Number(element.value).toFixed(2) }</td>
-                <td>{ element.exchangeRates[element.currency].name }</td>
-                <td>
+              <tr key={ index } className="table-tr-body">
+                <td className="table-td">{ element.description }</td>
+                <td className="table-td">{ element.tag }</td>
+                <td className="table-td">{ element.method }</td>
+                <td className="table-td">{ Number(element.value).toFixed(2) }</td>
+                <td
+                  className="table-td"
+                >
+                  { element.exchangeRates[element.currency].name }
+
+                </td>
+                <td className="table-td">
                   { Number(element
                     .exchangeRates[element.currency].ask).toFixed(2) }
 
                 </td>
-                <td>
+                <td className="table-td">
                   {
                     (element.value * element
                       .exchangeRates[element.currency].ask).toFixed(2)
                   }
 
                 </td>
-                <td>Real</td>
-                <td>Editar/Excluir</td>
+                <td className="table-td">Real</td>
+                <td className="table-td">
+                  <FiEdit size={ 20 } className="edit-icon" />
+                  <AiTwotoneDelete size={ 20 } className="delete-icon" />
+                </td>
               </tr>
             ))
             )}

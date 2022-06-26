@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    background-image: url('../images/backgroundWallet.jpg');
+}
+
+.header {
+    background-color: rgb(2, 71, 43);
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4rem 0;
+    color: rgb(226, 226, 226);
+    font-weight: 500;
+    width: 100vw;
+}
+
+.wallet-img-2 {
+    width: 3.5rem;
+    background: none;
+    margin-right: 2rem;
+}
+
+.wallet-trybewallet, .email-total {
+    display: flex;
+}
+
+.wallet-trybewallet {
+    font-weight: 800;
+    font-size: 1.5em;
+    font-family: exo;
+    align-items: center;
+    margin-left: 5rem
+}
+
+.user-icon, .coins-icon {
+    color: white;
+    margin: 0 0.5rem 0 2rem;
+}
+
+.email-total {
+    align-items: center;
+    margin-right: 5rem;
+    font-size: 1.1em;
+}
+
+.cifrao {
+    margin-right: 5px;
+}
+
+.form {
+    background-color: rgb(0, 46, 28);
+    padding: 1.1rem 0;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    justify-content:space-evenly;
+    font-size: 1.2em;
+}
+
+.input-form {
+    margin-left: 0.8rem;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+}
+
+.button-form {
+    border: 2px solid white;
+    background-color: rgb(2, 71, 43);
+    color: white;
+    padding: 0.7rem;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.button-form:hover {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(59, 58, 58);
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 3px 0;
+    width: 100vw;
+}
+
+
+.table-th {
+    padding: 15px;
+}
+
+.table-td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #ffffff;
+    font-weight: 500;
+}
+
+.table-tr {
+    background-color: rgb(31, 31, 31);
+    color: white;
+}
+
+.table-tr-body:nth-of-type(even) {
+    background-color: rgb(212, 212, 212);
+
+}
+
+.edit-icon {
+    margin-right: 10px;
+}
+
+.delete-icon {
+    margin-left: 10px;
+}
