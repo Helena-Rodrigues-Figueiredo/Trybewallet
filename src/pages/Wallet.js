@@ -191,8 +191,12 @@ render() {
                 </td>
                 <td className="table-td">Real</td>
                 <td className="table-td">
-                  <FiEdit size={ 20 } className="edit-icon" />
-                  <AiTwotoneDelete size={ 20 } className="delete-icon" />
+                  <button type="button" className="btn-icon">
+                    <FiEdit size={ 20 } className="edit-icon" />
+                  </button>
+                  <button type="button" className="btn-icon">
+                    <AiTwotoneDelete size={ 20 } className="delete-icon" />
+                  </button>
                 </td>
               </tr>
             ))
