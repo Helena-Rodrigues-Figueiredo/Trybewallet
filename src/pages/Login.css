@@ -4,10 +4,10 @@ body {
 
 .login {
   background-color: white;
-  display: flex;
   border-radius: 10px;
-  flex-direction: column;
+  display: flex;
   box-shadow: 0 0 1.5em rgb(2, 117, 69);
+  flex-direction: column;
   margin: 12rem auto 0;
   padding: 6rem 0;
   width: 30rem;
@@ -19,8 +19,8 @@ body {
   border-bottom: 1px rgb(200, 200, 200) solid;
   font-size: 1rem;
   margin-bottom: 0.8rem;
-  width: 60%;
   outline: 0;
+  width: 60%;
 }
 
 .input-login:focus {
@@ -31,12 +31,12 @@ body {
   align-self: center;
   background-color: rgb(2, 117, 69);
   border-radius: 10px;
-  color: white;
   border: none;
-  width: 50%;
+  color: white;
   font-size: 1rem;
-  margin-top: 2rem;
+  width: 50%;
   font-weight: 900;
+  margin-top: 2rem;
   padding: 0.8rem;
 }
 
