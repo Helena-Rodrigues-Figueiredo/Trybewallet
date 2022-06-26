@@ -191,7 +191,10 @@ render() {
                 </td>
                 <td className="table-td">Real</td>
                 <td className="table-td">
-                  <button type="button" className="btn-icon">
+                  <button
+                    type="button"
+                    className="btn-icon"
+                  >
                     <FiEdit size={ 20 } className="edit-icon" />
                   </button>
                   <button
