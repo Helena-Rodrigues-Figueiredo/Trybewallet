@@ -5,21 +5,21 @@ body {
 .login {
   background-color: white;
   display: flex;
-  margin: 12rem auto 0;
   flex-direction: column;
-  width: 30rem;
+  margin: 12rem auto 0;
   border-radius: 10px;
-  padding: 6rem 0 6rem;
+  width: 30rem;
   box-shadow: 0 0 1.5em rgb(2, 117, 69);
+  padding: 6rem 0;
 }
 
 .input-login {
   align-self: center;
   border: none;
-  width: 60%;
   border-bottom: 1px rgb(200, 200, 200) solid;
-  margin-bottom: 0.8rem;
+  width: 60%;
   font-size: 1rem;
+  margin-bottom: 0.8rem;
   outline: 0;
 }
 
@@ -29,14 +29,14 @@ body {
 
 .button-login {
   align-self: center;
-  width: 50%;
   background-color: rgb(2, 117, 69);
+  width: 50%;
   color: white;
-  margin-top: 2rem;
   border-radius: 10px;
-  padding: 0.8rem;
-  font-size: 1rem;
+  margin-top: 2rem;
   border: none;
+  font-size: 1rem;
+  padding: 0.8rem;
   font-weight: 900;
 }
 
