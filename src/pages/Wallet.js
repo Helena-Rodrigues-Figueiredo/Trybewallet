@@ -7,7 +7,7 @@ import { GiTwoCoins } from 'react-icons/gi';
 import { AiTwotoneDelete } from 'react-icons/ai';
 import { FiEdit } from 'react-icons/fi';
 import image from '../images/wallet2.png';
-import { fetchApi, fetchApiExpenses } from '../actions';
+import { fetchApi, fetchApiExpenses, deleteElement } from '../actions';
 
 class Wallet extends React.Component {
 state = {
@@ -194,7 +194,15 @@ render() {
                   <button type="button" className="btn-icon">
                     <FiEdit size={ 20 } className="edit-icon" />
                   </button>
-                  <button type="button" className="btn-icon">
+                  <button
+                    type="button"
+                    className="btn-icon"
+                    data-testid="delete-btn"
+                    onClick={ () => {
+                      const { dispatch } = this.props;
+                      dispatch(deleteElement(element.id));
+                    } }
+                  >
                     <AiTwotoneDelete size={ 20 } className="delete-icon" />
                   </button>
                 </td>

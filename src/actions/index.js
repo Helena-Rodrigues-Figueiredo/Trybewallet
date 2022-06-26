@@ -1,6 +1,7 @@
 export const SEND_EMAIL = 'SEND_EMAIL';
 export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const GET_CURRENCIES_EXPENSES = 'GET_CURRENCIES_EXPENSES';
+export const DELETE_ELEMENT = 'DELETE_ELEMENT';
 
 export const sendEmail = (email) => ({
   type: SEND_EMAIL,
@@ -15,6 +16,11 @@ export const getCurrencies = (currencies) => ({
 export const getCurrenciesExpenses = (expenses) => ({
   type: GET_CURRENCIES_EXPENSES,
   payload: expenses,
+});
+
+export const deleteElement = (id) => ({
+  type: DELETE_ELEMENT,
+  payload: id,
 });
 
 export const fetchApi = () => async (dispatch) => {

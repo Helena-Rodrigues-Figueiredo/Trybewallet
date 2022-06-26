@@ -51,16 +51,16 @@ body {
   color: white;
   display: flex;
   font-size: 1.2em;
-  padding: 1.1rem 0;
   font-weight: 500;
+  padding: 1.1rem 0;
   justify-content: space-evenly;
 }
 
 .input-form {
   border: none;
   border-radius: 10px;
-  margin-left: 0.8rem;
   height: 2rem;
+  margin-left: 0.8rem;
   text-align: center;
   width: 10rem;
 }
@@ -116,6 +116,6 @@ body {
 
 .btn-icon {
   border: none;
-  cursor: pointer;
   background-color: transparent;
+  cursor: pointer;
 }
