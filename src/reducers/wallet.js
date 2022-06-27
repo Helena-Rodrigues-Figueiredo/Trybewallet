@@ -1,8 +1,11 @@
-import { DELETE_ELEMENT, GET_CURRENCIES, GET_CURRENCIES_EXPENSES } from '../actions';
+import { DELETE_ELEMENT, GET_CURRENCIES,
+  GET_CURRENCIES_EXPENSES, EDIT_ELEMENT } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
   expenses: [],
+  edit: false,
+  idToEdit: 0,
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
@@ -21,6 +24,12 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: state.expenses.filter((element) => element.id !== action.payload),
+    };
+  case EDIT_ELEMENT:
+    return {
+      ...state,
+      edit: true,
+      idToEdit: action.payload,
     };
   default:
     return state;

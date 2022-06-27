@@ -2,6 +2,7 @@ export const SEND_EMAIL = 'SEND_EMAIL';
 export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const GET_CURRENCIES_EXPENSES = 'GET_CURRENCIES_EXPENSES';
 export const DELETE_ELEMENT = 'DELETE_ELEMENT';
+export const EDIT_ELEMENT = 'EDIT_ELEMENT';
 
 export const sendEmail = (email) => ({
   type: SEND_EMAIL,
@@ -20,6 +21,11 @@ export const getCurrenciesExpenses = (expenses) => ({
 
 export const deleteElement = (id) => ({
   type: DELETE_ELEMENT,
+  payload: id,
+});
+
+export const createActionEditElement = (id) => ({
+  type: EDIT_ELEMENT,
   payload: id,
 });
 

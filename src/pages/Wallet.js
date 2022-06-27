@@ -7,7 +7,8 @@ import { GiTwoCoins } from 'react-icons/gi';
 import { AiTwotoneDelete } from 'react-icons/ai';
 import { FiEdit } from 'react-icons/fi';
 import image from '../images/wallet2.png';
-import { fetchApi, fetchApiExpenses, deleteElement } from '../actions';
+import { fetchApi, fetchApiExpenses, deleteElement,
+  createActionEditElement } from '../actions';
 
 class Wallet extends React.Component {
 state = {
@@ -194,6 +195,11 @@ render() {
                   <button
                     type="button"
                     className="btn-icon"
+                    onClick={ () => {
+                      const { dispatch, elementBeingEdit } = this.props;
+                      dispatch(createActionEditElement(element.id));
+                      this.setState(elementBeingEdit);
+                    } }
                   >
                     <FiEdit size={ 20 } className="edit-icon" />
                   </button>
@@ -223,6 +229,10 @@ const mapStateToProps = (state) => ({
   email: state.user.email,
   currencies: state.wallet.currencies,
   expenses: state.wallet.expenses,
+  edit: state.wallet.edit,
+  idToEdit: state.wallet.idToEdit,
+  elementBeingEdit: state.wallet.expenses
+    .find(({ id }) => id === state.wallet.idToEdit),
 });
 
 Wallet.propTypes = {
@@ -230,6 +240,7 @@ Wallet.propTypes = {
   dispatch: PropTypes.string.isRequired,
   currencies: PropTypes.arrayOf.isRequired,
   expenses: PropTypes.arrayOf.isRequired,
+  elementBeingEdit: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps)(Wallet);
