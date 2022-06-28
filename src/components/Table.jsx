@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { AiTwotoneDelete } from 'react-icons/ai';
 import { FiEdit } from 'react-icons/fi';
-import { deleteElement, createActionEditElement } from '../actions';
+import { deleteElement, editElement } from '../actions';
 
 class Table extends Component {
   render() {
@@ -51,7 +51,7 @@ class Table extends Component {
                   <button
                     type="button"
                     className="btn-icon"
-                    onClick={ () => { dispatch(createActionEditElement(id)); } }
+                    onClick={ () => { dispatch(editElement(id)); } }
                   >
                     <FiEdit size={ 20 } className="edit-icon" />
                   </button>

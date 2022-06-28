@@ -24,7 +24,7 @@ export const deleteElement = (id) => ({
   payload: id,
 });
 
-export const createActionEditElement = (id) => ({
+export const editElement = (id) => ({
   type: EDIT_ELEMENT,
   payload: id,
 });
