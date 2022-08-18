@@ -21,6 +21,6 @@ Foi desenvolvida uma carteira de controle de gastos com conversor de moedas, e a
 
 * Criar actions assíncronas na aplicação React que faz uso de Redux.
 
-## Deploy
+## Prévia
 
-[Clique aqui para visualizar a aplicação](https://helena-wallet.surge.sh/).
+![trybewallet](https://user-images.githubusercontent.com/99517204/185465765-8d0aafad-ffd6-47f6-b9b6-9661d81abd1b.gif)
